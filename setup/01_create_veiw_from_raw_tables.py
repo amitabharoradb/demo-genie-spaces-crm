@@ -1,9 +1,12 @@
 # Databricks notebook source
+sharedCatalogName = 'Amitabh_Arora_Databricks_Enterprise_Software_Sales_Dataset'
 catalogName = 'amitabh_arora_catalog'
-schemaName ='databricks_enterprise_software_sales_veiws'
+schemaName ='enterprise_software_sales_sample'
+viewSchemaName ='enterprise_software_sales_sample_views'
+
 #spark.sql(f"CREATE CATALOG IF NOT EXISTS {catalogName} COMMENT 'Sample view sharing catalog'");
-spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalogName}.{schemaName}");
-spark.sql(f"use {catalogName}.{schemaName}");
+spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalogName}.{viewSchemaName}");
+spark.sql(f"use {catalogName}.{viewSchemaName}");
 
 # COMMAND ----------
 
@@ -35,7 +38,7 @@ spark.sql(f"use {catalogName}.{schemaName}");
 # MAGIC     company_size_segment__c,
 # MAGIC     annualrevenue
 # MAGIC   from
-# MAGIC     databricks_enterprise_software_sales_dataset.enterprise_software_sales_sample.accounts
+# MAGIC     `Amitabh_Arora_Databricks_Enterprise_Software_Sales_Dataset`.enterprise_software_sales_sample.accounts
 # MAGIC   );
 # MAGIC
 # MAGIC -- Create a view for the opportunity table
@@ -82,7 +85,7 @@ spark.sql(f"use {catalogName}.{schemaName}");
 # MAGIC   New_Recurring_Bookings__c,
 # MAGIC   business_type__c
 # MAGIC   from
-# MAGIC  databricks_enterprise_software_sales_dataset.enterprise_software_sales_sample.opportunity
+# MAGIC  `Amitabh_Arora_Databricks_Enterprise_Software_Sales_Dataset`.enterprise_software_sales_sample.opportunity
 # MAGIC   );
 # MAGIC
 # MAGIC   -- Create a view for the opportunity history table
@@ -111,7 +114,7 @@ spark.sql(f"use {catalogName}.{schemaName}");
 # MAGIC   date_add(closedate, 180) as closedate,
 # MAGIC   date_add(createddate, 180) as createddate
 # MAGIC   from
-# MAGIC  databricks_enterprise_software_sales_dataset.enterprise_software_sales_sample.opportunityhistory
+# MAGIC  `Amitabh_Arora_Databricks_Enterprise_Software_Sales_Dataset`.enterprise_software_sales_sample.opportunityhistory
 # MAGIC   );
 # MAGIC
 # MAGIC -- Create a view for the period table
@@ -142,7 +145,7 @@ spark.sql(f"use {catalogName}.{schemaName}");
 # MAGIC   ID,
 # MAGIC   TYPE
 # MAGIC   from
-# MAGIC  databricks_enterprise_software_sales_dataset.enterprise_software_sales_sample.period
+# MAGIC  `Amitabh_Arora_Databricks_Enterprise_Software_Sales_Dataset`.enterprise_software_sales_sample.period
 # MAGIC   );
 # MAGIC
 # MAGIC -- Create a view for the teams table
@@ -163,7 +166,7 @@ spark.sql(f"use {catalogName}.{schemaName}");
 # MAGIC   MANAGER,
 # MAGIC   TEAM
 # MAGIC   from
-# MAGIC  databricks_enterprise_software_sales_dataset.enterprise_software_sales_sample.teams
+# MAGIC  `Amitabh_Arora_Databricks_Enterprise_Software_Sales_Dataset`.enterprise_software_sales_sample.teams
 # MAGIC   );
 # MAGIC
 # MAGIC -- Create a view for the user table
@@ -188,7 +191,7 @@ spark.sql(f"use {catalogName}.{schemaName}");
 # MAGIC   segment__c,
 # MAGIC   region__c
 # MAGIC   from
-# MAGIC  databricks_enterprise_software_sales_dataset.enterprise_software_sales_sample.user
+# MAGIC  `Amitabh_Arora_Databricks_Enterprise_Software_Sales_Dataset`.enterprise_software_sales_sample.user
 # MAGIC   );
 
 # COMMAND ----------

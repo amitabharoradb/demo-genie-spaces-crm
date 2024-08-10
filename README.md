@@ -12,7 +12,7 @@ Create my own genie spaces demo based on DAIS 2024 demo.
 [User Guide: Sample CRM Genie Spaces - Setup Instructions for data](https://docs.google.com/document/d/1dasNFo-wDRez_Af_GawMKyRQinDWHcklvgaPYO8WSh4/edit#heading=h.khl921cnr7lb)
 
 1. Copy data from Marketplace if not already exists:
-*'databricks_enterprise_software_sales_dataset.enterprise_software_sales_sample'*
-2. Run my setup [notebook](https://e2-demo-field-eng.cloud.databricks.com/?o=1444828305810485#notebook/2032780391394523/command/2032780391394524) if not already done so
+*'amitabh_arora_databricks_enterprise_software_sales_dataset.enterprise_software_sales_sample'*
+2. Run my setup [notebook](https://e2-demo-field-eng.cloud.databricks.com/?o=1444828305810485#notebook/2032780391394523) if not already done so, to copy the tables into well documented views
 
 
