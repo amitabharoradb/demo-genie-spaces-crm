@@ -1,12 +1,12 @@
 # Databricks notebook source
-sharedCatalogName = 'Amitabh_Arora_Databricks_Enterprise_Software_Sales_Dataset'
+sharedCatalogName = 'amitabh_arora_enterprise_software_sales_dataset'
+sharedSchemaName ='enterprise_software_sales_sample'
 catalogName = 'amitabh_arora_catalog'
-schemaName ='enterprise_software_sales_sample'
-viewSchemaName ='enterprise_software_sales_sample_views'
+schemaName ='enterprise_software_sales_sample_views'
 
 #spark.sql(f"CREATE CATALOG IF NOT EXISTS {catalogName} COMMENT 'Sample view sharing catalog'");
-spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalogName}.{viewSchemaName}");
-spark.sql(f"use {catalogName}.{viewSchemaName}");
+spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalogName}.{schemaName}");
+spark.sql(f"use {catalogName}.{schemaName}");
 
 # COMMAND ----------
 
@@ -38,7 +38,7 @@ spark.sql(f"use {catalogName}.{viewSchemaName}");
 # MAGIC     company_size_segment__c,
 # MAGIC     annualrevenue
 # MAGIC   from
-# MAGIC     `Amitabh_Arora_Databricks_Enterprise_Software_Sales_Dataset`.enterprise_software_sales_sample.accounts
+# MAGIC     amitabh_arora_enterprise_software_sales_dataset.enterprise_software_sales_sample.accounts
 # MAGIC   );
 # MAGIC
 # MAGIC -- Create a view for the opportunity table
@@ -85,7 +85,7 @@ spark.sql(f"use {catalogName}.{viewSchemaName}");
 # MAGIC   New_Recurring_Bookings__c,
 # MAGIC   business_type__c
 # MAGIC   from
-# MAGIC  `Amitabh_Arora_Databricks_Enterprise_Software_Sales_Dataset`.enterprise_software_sales_sample.opportunity
+# MAGIC  amitabh_arora_enterprise_software_sales_dataset.enterprise_software_sales_sample.opportunity
 # MAGIC   );
 # MAGIC
 # MAGIC   -- Create a view for the opportunity history table
@@ -114,7 +114,7 @@ spark.sql(f"use {catalogName}.{viewSchemaName}");
 # MAGIC   date_add(closedate, 180) as closedate,
 # MAGIC   date_add(createddate, 180) as createddate
 # MAGIC   from
-# MAGIC  `Amitabh_Arora_Databricks_Enterprise_Software_Sales_Dataset`.enterprise_software_sales_sample.opportunityhistory
+# MAGIC  amitabh_arora_enterprise_software_sales_dataset.enterprise_software_sales_sample.opportunityhistory
 # MAGIC   );
 # MAGIC
 # MAGIC -- Create a view for the period table
@@ -145,7 +145,7 @@ spark.sql(f"use {catalogName}.{viewSchemaName}");
 # MAGIC   ID,
 # MAGIC   TYPE
 # MAGIC   from
-# MAGIC  `Amitabh_Arora_Databricks_Enterprise_Software_Sales_Dataset`.enterprise_software_sales_sample.period
+# MAGIC  amitabh_arora_enterprise_software_sales_dataset.enterprise_software_sales_sample.period
 # MAGIC   );
 # MAGIC
 # MAGIC -- Create a view for the teams table
@@ -166,7 +166,7 @@ spark.sql(f"use {catalogName}.{viewSchemaName}");
 # MAGIC   MANAGER,
 # MAGIC   TEAM
 # MAGIC   from
-# MAGIC  `Amitabh_Arora_Databricks_Enterprise_Software_Sales_Dataset`.enterprise_software_sales_sample.teams
+# MAGIC  amitabh_arora_enterprise_software_sales_dataset.enterprise_software_sales_sample.teams
 # MAGIC   );
 # MAGIC
 # MAGIC -- Create a view for the user table
@@ -191,20 +191,20 @@ spark.sql(f"use {catalogName}.{viewSchemaName}");
 # MAGIC   segment__c,
 # MAGIC   region__c
 # MAGIC   from
-# MAGIC  `Amitabh_Arora_Databricks_Enterprise_Software_Sales_Dataset`.enterprise_software_sales_sample.user
+# MAGIC  amitabh_arora_enterprise_software_sales_dataset.enterprise_software_sales_sample.user
 # MAGIC   );
 
 # COMMAND ----------
 
 # Grant catalog, schema, and table permissions to all users in workspace
-spark.sql(f"GRANT USAGE ON CATALOG {catalogName} TO `account users`");
-spark.sql(f"GRANT USAGE ON SCHEMA {catalogName}.{schemaName} TO `account users`");
-spark.sql(f"GRANT SELECT ON VIEW {catalogName}.{schemaName}.accounts TO `account users`");
-spark.sql(f"GRANT SELECT ON VIEW {catalogName}.{schemaName}.opportunity TO `account users`");
-spark.sql(f"GRANT SELECT ON VIEW {catalogName}.{schemaName}.opportunityhistory TO `account users`");
-spark.sql(f"GRANT SELECT ON VIEW {catalogName}.{schemaName}.period TO `account users`");
-spark.sql(f"GRANT SELECT ON VIEW {catalogName}.{schemaName}.teams TO `account users`");
-spark.sql(f"GRANT SELECT ON VIEW {catalogName}.{schemaName}.user TO `account users`");
+# spark.sql(f"GRANT USAGE ON CATALOG {catalogName} TO `account users`");
+# spark.sql(f"GRANT USAGE ON SCHEMA {catalogName}.{schemaName} TO `account users`");
+# spark.sql(f"GRANT SELECT ON VIEW {catalogName}.{schemaName}.accounts TO `account users`");
+# spark.sql(f"GRANT SELECT ON VIEW {catalogName}.{schemaName}.opportunity TO `account users`");
+# spark.sql(f"GRANT SELECT ON VIEW {catalogName}.{schemaName}.opportunityhistory TO `account users`");
+# spark.sql(f"GRANT SELECT ON VIEW {catalogName}.{schemaName}.period TO `account users`");
+# spark.sql(f"GRANT SELECT ON VIEW {catalogName}.{schemaName}.teams TO `account users`");
+# spark.sql(f"GRANT SELECT ON VIEW {catalogName}.{schemaName}.user TO `account users`");
 
 # COMMAND ----------
 
